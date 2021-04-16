@@ -1,9 +1,9 @@
 import axios from 'axios'
 import React, {useEffect, useState} from 'react'
+import Head from 'next/head'
 import {Button, Form, Container, Header} from 'semantic-ui-react'
 
-
-function App() {
+export default function Page() {
   const api = 'https://sheet.best/api/sheets/f3adf14a-e008-4b7e-bb24-aa436d5b751d'
 
   const [form, setForm] = useState({
@@ -50,12 +50,14 @@ function App() {
 
   return (
       <Container className="container">
-    
-        <Header as='h2'>Next Google Sheets</Header>
+        <Head>
+          <title>Page two</title>
+        </Head>
+        <Header as='h2'>Next Google Sheets - Page two</Header>
 
         <Form className='form' onSubmit={submitHandler}> 
           <Form.Field>
-            <label>Name</label>
+            <label>Name - Page two</label>
             <input placeholder='Enter your name' type='text' name='name' value={form.name} onChange={changeHandler} />
           </Form.Field>
           <Form.Field>
@@ -72,6 +74,7 @@ function App() {
           </Form.Field>
 
           <Button color='green' inverted  type='submit'>Submit</Button>
+          
 
         </Form>
       
@@ -79,6 +82,4 @@ function App() {
 
   )
 }
-
-export default App
 
